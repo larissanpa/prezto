@@ -36,8 +36,16 @@ alias gcd='git checkout develop'
 alias gcdot='git checkout -- .'
 alias gmit='git commit'
 
+# java
+alias java8='export JAVA_HOME=$JAVA_8_HOME'
+alias java11='export JAVA_HOME=$JAVA_11_HOME'
+
+# default to Java 8
+java8
+
 # other commands
 alias historian='docker -- run -p 9999:9999 gcr.io/android-battery-historian/stable:3.0 --port 9999'
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/larissa.navarro/.sdkman"
 [[ -s "/Users/larissa.navarro/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/larissa.navarro/.sdkman/bin/sdkman-init.sh"
