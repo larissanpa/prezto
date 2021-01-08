@@ -46,6 +46,10 @@ java8
 # other commands
 alias historian='docker -- run -p 9999:9999 gcr.io/android-battery-historian/stable:3.1 --port 9999'
 
+# SSO
+alias brenv='source ~/Developer/aws-entrypoint/br'
+alias gbenv='source ~/Developer/aws-entrypoint/global' 
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/larissa.navarro/.sdkman"
 [[ -s "/Users/larissa.navarro/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/larissa.navarro/.sdkman/bin/sdkman-init.sh"
