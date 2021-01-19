@@ -20,3 +20,4 @@ export GOPATH=$HOME/Developer/go
 export GOROOT="/usr/local/Cellar/go/1.13.1/libexec"
 export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
 export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
+export JAVA_15_HOME=$(/usr/libexec/java_home -v15)
