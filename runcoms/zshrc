@@ -20,8 +20,6 @@ alias ll='ls -la'
 
 # Navigation
 alias dev='cd ~/Developer'
-alias gosrc='cd ~/Developer/go/src'
-alias godev='cd ~/Developer/go/src/github.com/inloco'
 alias preztoconf='cd ~/.zprezto'
 
 # git
@@ -54,3 +52,6 @@ alias gbenv='source ~/Developer/aws-entrypoint/global'
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/larissa.navarro/.sdkman"
 [[ -s "/Users/larissa.navarro/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/larissa.navarro/.sdkman/bin/sdkman-init.sh"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
