@@ -35,19 +35,21 @@ alias gcdot='git checkout -- .'
 alias gmit='git commit'
 
 # java
-alias java8='export JAVA_HOME=$JAVA_8_HOME'
-alias java11='export JAVA_HOME=$JAVA_11_HOME'
-alias java15='export JAVA_HOME=$JAVA_15_HOME'
+jdk() {
+  version=$1
+  export JAVA_HOME=$(/usr/libexec/java_home -v"$version")
+  java -version
+}
 
 # default to Java 8
-java8
+jdk 1.8
 
 # other commands
 alias historian='docker -- run -p 9999:9999 gcr.io/android-battery-historian/stable:3.1 --port 9999'
 
 # SSO
 alias brenv='source ~/Developer/aws-entrypoint/br'
-alias gbenv='source ~/Developer/aws-entrypoint/global' 
+alias gbenv='source ~/Developer/aws-entrypoint/global'
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/larissa.navarro/.sdkman"
