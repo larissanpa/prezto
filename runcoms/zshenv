@@ -11,7 +11,7 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
 fi
 
 # Path variables
-export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/Developer/go/bin
 export PATH=$PATH:/Users/larissa.navarro/Library/Android/sdk/platform-tools
