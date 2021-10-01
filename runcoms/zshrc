@@ -41,7 +41,7 @@ jdk() {
   java -version
 }
 
-# default to Java 8
+# default to Java 11
 jdk 11
 
 # other commands
@@ -55,6 +55,7 @@ alias gbenv='source ~/Developer/aws-entrypoint/global'
 alias vpnping='ping 10.244.0.1'
 alias vpnup='sudo /opt/local/bin/bash /opt/local/bin/wg-quick up wg0'
 alias vpndown='sudo /opt/local/bin/bash /opt/local/bin/wg-quick down wg0'
+alias vpnauth='curl -v --negotiate -u: https://vpn-auth.corp.incognia.tech/auth'
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/larissa.navarro/.sdkman"
