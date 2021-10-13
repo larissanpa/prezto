@@ -51,11 +51,15 @@ alias historian='docker -- run -p 9999:9999 gcr.io/android-battery-historian/sta
 alias brenv='source ~/Developer/aws-entrypoint/br'
 alias gbenv='source ~/Developer/aws-entrypoint/global'
 
+# default to gbenv
+gbenv
+
 # VPN
 alias vpnping='ping 10.244.0.1'
 alias vpnup='sudo /opt/local/bin/bash /opt/local/bin/wg-quick up wg0'
 alias vpndown='sudo /opt/local/bin/bash /opt/local/bin/wg-quick down wg0'
 alias vpnauth='curl -v --negotiate -u: https://vpn-auth.corp.incognia.tech/auth'
+alias dnskill='sudo killall mDNSResponder'
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/larissa.navarro/.sdkman"
@@ -63,3 +67,10 @@ export SDKMAN_DIR="/Users/larissa.navarro/.sdkman"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# React Native environment
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
