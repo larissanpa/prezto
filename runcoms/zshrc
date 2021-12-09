@@ -61,12 +61,13 @@ alias vpndown='sudo /opt/local/bin/bash /opt/local/bin/wg-quick down wg0'
 alias vpnauth='curl -v --negotiate -u: https://vpn-auth.corp.incognia.tech/auth'
 alias dnskill='sudo killall mDNSResponder'
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/larissa.navarro/.sdkman"
-[[ -s "/Users/larissa.navarro/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/larissa.navarro/.sdkman/bin/sdkman-init.sh"
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# apk <package_name>
+apk() {	
+	local APK3=$(adb shell pm path $1) &&
+                adb pull ${APK3#*:} ~/Downloads/ ;
+	            open ~/Downloads/ ;
+		        open ~/Downloads/base.apk 
+}
 
 # React Native environment
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -74,3 +75,10 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/larissa.navarro/.sdkman"
+[[ -s "/Users/larissa.navarro/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/larissa.navarro/.sdkman/bin/sdkman-init.sh"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
