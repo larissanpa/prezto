@@ -58,7 +58,7 @@ gbenv
 alias vpnping='ping 10.244.0.1'
 alias vpnup='sudo /opt/local/bin/bash /opt/local/bin/wg-quick up wg0'
 alias vpndown='sudo /opt/local/bin/bash /opt/local/bin/wg-quick down wg0'
-alias vpnauth='curl -v --negotiate -u: https://vpn-auth.corp.incognia.tech/auth'
+alias vpnauth='curl -v --negotiate -u: https://vpn-auth.corp.incognia.tech'
 alias dnskill='sudo killall mDNSResponder'
 
 # apk <package_name>
