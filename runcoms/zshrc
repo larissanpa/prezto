@@ -10,4 +10,78 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
+# Commands
+fpath=(/usr/local/share/zsh-completions $fpath) # zsh-completions
+
+# Aliases
+
+# System commands
+alias ll='ls -la'
+
+# Navigation
+alias dev='cd ~/Developer'
+alias preztoconf='cd ~/.zprezto'
+
+# git
+alias gdel='git branch --merged | grep -v "\master" | xargs -n 1 git branch -d'
+alias gpc='git push --set-upstream origin "$(git-branch-current 2> /dev/null)"'
+alias gpp='git pull origin "$(git-branch-current 2> /dev/null)" && git push origin "$(git-branch-current 2> /dev/null)"'
+alias gpho='git push origin "$(git-branch-current 2> /dev/null)"'
+alias gplo='git pull origin "$(git-branch-current 2> /dev/null)"'
+alias gst='git status'
+alias gal='git add .'
+alias gcd='git checkout develop'
+alias gcdot='git checkout -- .'
+alias gmit='git commit'
+
+# java
+jdk() {
+  version=$1
+  export JAVA_HOME=$(/usr/libexec/java_home -v"$version")
+  java -version
+}
+
+# default to Java 11
+jdk 11
+
+# other commands
+alias historian='docker -- run -p 9999:9999 gcr.io/android-battery-historian/stable:3.1 --port 9999'
+
+# SSO
+alias brenv='source ~/Developer/aws-entrypoint/br'
+alias gbenv='source ~/Developer/aws-entrypoint/global'
+
+# default to gbenv
+gbenv
+
+# VPN
+alias vpnping='ping 10.244.0.1'
+alias vpnup='sudo /opt/local/bin/bash /opt/local/bin/wg-quick up wg0'
+alias vpndown='sudo /opt/local/bin/bash /opt/local/bin/wg-quick down wg0'
+alias vpnauth='curl -v --negotiate -u: https://vpn-auth.corp.incognia.tech'
+alias dnskill='sudo killall mDNSResponder'
+
+# apk <package_name>
+apk() {	
+	local APK3=$(adb shell pm path $1) &&
+                adb pull ${APK3#*:} ~/Downloads/ ;
+	            open ~/Downloads/ ;
+		        open ~/Downloads/base.apk 
+}
+
+# GPG Signing
+export GPG_TTY=$TTY
+
+# React Native environment
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/larissa.navarro/.sdkman"
+[[ -s "/Users/larissa.navarro/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/larissa.navarro/.sdkman/bin/sdkman-init.sh"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
