@@ -13,6 +13,9 @@ fi
 # Commands
 fpath=(/usr/local/share/zsh-completions $fpath) # zsh-completions
 
+# kubectl completions
+source <(kubectl completion zsh)
+
 # Aliases
 
 # System commands
