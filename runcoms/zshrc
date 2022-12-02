@@ -63,6 +63,9 @@ alias vpndown='sudo /opt/local/bin/bash /opt/local/bin/wg-quick down wg0'
 alias vpnauth='curl -v --negotiate -u: https://vpn-auth.corp.incognia.tech'
 alias dnskill='sudo killall mDNSResponder'
 
+# Python
+alias python='python3'
+
 # apk <package_name>
 apk() {	
 	local APK3=$(adb shell pm path $1) &&
