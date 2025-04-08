@@ -47,14 +47,21 @@ jdk() {
 # default to Java 11
 jdk 11
 
+# Golang private repo access
+go env -w GOPRIVATE='github.com/inloco/*'
+
 # other commands
 alias historian='docker -- run -p 9999:9999 gcr.io/android-battery-historian/stable:3.1 --port 9999'
+alias interfaces='go get -u github.com/inloco/interfaces/go'
 
 # SSO
 alias gbenv='source ~/Developer/aws-entrypoint/global'
 
-# default to gbenv
-gbenv
+# default to production
+export AWS_PROFILE=incognia-production-product
+
+alias stagingProfile='export AWS_PROFILE=incognia-staging-product'
+alias productionProfile='export AWS_PROFILE=incognia-production-product'
 
 # VPN
 alias vpnping='ping 10.244.0.1'
@@ -65,6 +72,12 @@ alias dnskill='sudo killall mDNSResponder'
 
 # Python
 alias python='python3'
+alias bpy='/opt/homebrew/bin/python3'
+
+# Xcode
+alias xcodeselect14='sudo xcode-select -s /Applications/Xcode14.app'
+alias xcodeselect15='sudo xcode-select -s /Applications/Xcode.app'
+alias xcode14='open /Applications/Xcode14.app/Contents/MacOS/Xcode'
 
 # apk <package_name>
 apk() {	
@@ -86,3 +99,5 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+export LANG=en_US.UTF-8
