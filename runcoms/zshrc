@@ -62,6 +62,12 @@ export AWS_PROFILE=incognia-production-product
 alias stagingProfile='export AWS_PROFILE=incognia-staging-product'
 alias productionProfile='export AWS_PROFILE=incognia-production-product'
 
+# Podman
+alias docker='podman'
+alias docker-compose='podman compose'
+export CONTAINER_TOOL=podman
+export COMPOSE_TOOL="podman compose"
+
 # Python
 alias python='python3'
 alias bpy='/opt/homebrew/bin/python3'
@@ -69,6 +75,7 @@ alias bpy='/opt/homebrew/bin/python3'
 # Xcode
 alias xcodeselect16='sudo xcode-select -s /Applications/Xcode16.app'
 alias xcodeselect='sudo xcode-select -s /Applications/Xcode.app'
+alias xed16='`/Applications/Xcode16.app/Contents/MacOS/Xcode &`'
 
 # apk <package_name>
 apk() {	
@@ -87,6 +94,12 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$HOME/Library/Python/3.9/bin:$PATH"
+
+# Fixes Ruby 2.7.8 Open SSL issues
+export SSL_CERT_FILE="$(brew --prefix ca-certificates)/share/ca-certificates/cacert.pem"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
