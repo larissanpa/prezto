@@ -24,6 +24,7 @@ alias ll='ls -la'
 # Navigation
 alias dev='cd ~/Developer'
 alias preztoconf='cd ~/.zprezto'
+alias agentDev='cd ~/agentbox-workspace/'
 
 # git
 alias gdel='git branch --merged | grep -v "\master" | xargs -n 1 git branch -d'
@@ -36,6 +37,7 @@ alias gal='git add .'
 alias gcd='git checkout develop'
 alias gcdot='git checkout -- .'
 alias gmit='git commit'
+alias gsu='git submodule update --init --recursive'
 
 # java
 jdk() {
@@ -76,6 +78,7 @@ alias bpy='/opt/homebrew/bin/python3'
 alias xcodeselect16='sudo xcode-select -s /Applications/Xcode16.app'
 alias xcodeselect='sudo xcode-select -s /Applications/Xcode.app'
 alias xed16='`/Applications/Xcode16.app/Contents/MacOS/Xcode &`'
+alias xcodeselect260='sudo xcode-select -s /Applications/Xcode260.app'
 
 # apk <package_name>
 apk() {	
@@ -105,3 +108,16 @@ export SSL_CERT_FILE="$(brew --prefix ca-certificates)/share/ca-certificates/cac
 export PATH="$PATH:$HOME/.rvm/bin"
 
 export LANG=en_US.UTF-8
+# opencode
+export PATH=/Users/larissa.navarro/.opencode/bin:$PATH
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+. "$HOME/.local/bin/env"
+
+# ASDF
+# START managed asdf configuration
+export PATH="$HOME/.local/bin:${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+# END managed asdf configuration

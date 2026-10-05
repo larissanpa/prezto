@@ -19,3 +19,4 @@ export PATH=$PATH:/Users/larissa.navarro/Library/Android/sdk/tools/proguard/bin
 export PATH=$PATH:/opt/homebrew/bin
 export GOBIN="$HOME/Developer/go/bin"
 . "$HOME/.cargo/env"
+export PATH="/Users/larissa.navarro/Developer/flutter/bin:$PATH"
